@@ -20,7 +20,7 @@ export const getPersonajes = async (req, res) => {
             : res.status(404).send("No se encontraron personajes");
     } else if (movies) {
         const personajeByMovies = personajes
-            .filter((e) => e.peliculaAsociada == peliculaAsociada); // esto nos devuelve un arreglo con los personajes que coincidan con el nombre que le pasemos
+            .filter((e) => e.peliculaAsociada == peliculaAsociada); // esto nos devuelve un arreglo con los personajes que coincidan con el id de pelicula que le pasemos
         personajeByMovies.length 
             ? res.status(200).json(personajeByMovies)
             : res.status(404).send("No se encontraron personajes");
